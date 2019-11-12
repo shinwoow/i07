@@ -1,6 +1,6 @@
 # i07
 
-> A Vue.js project
+> A Vue.js project with element-ui.It is a resume of shin
 
 ## Build Setup
 
