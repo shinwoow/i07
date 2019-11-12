@@ -23,15 +23,15 @@
             <div>
               <el-tag>昵称</el-tag>
               <b style="margin-left: 10px;">shin</b>
-              <p style="color:#9099AB;margin-left:20px;">在学习中实践，在实践中学习</p>
+              <span style="color:#9099AB;margin-left:20px;">在学习中实践，在实践中学习</span>
               <img style="width:100px; height:100px;float:right;" src="../assets/touxian.jpg" />
             </div>
 
             <div>
               <el-tag type="warning">岗位</el-tag>
-              <p>
+              <span>
                 <b style="color:#365FDC;">WEB前端</b>
-              </p>
+              </span>
             </div>
 
             <div>
@@ -41,12 +41,12 @@
 
             <div>
               <el-tag type="danger">证书</el-tag>
-              <p>CET-4&nbsp;&nbsp;&nbsp;国家计算机二级</p>
+              <span>CET-4&nbsp;&nbsp;&nbsp;国家计算机二级</span>
             </div>
 
             <div>
               <el-tag type="info">爱好</el-tag>
-              <p>篮球&nbsp;&nbsp;&nbsp;吉他</p>
+              <span>篮球&nbsp;&nbsp;&nbsp;吉他</span>
               <div class="gif" @click="changeImg">
                 <img style="height:200px;width:200px;" src="../assets/basketball.gif" />
               </div>
@@ -61,7 +61,7 @@
                 trigger="hover"
                 content="统招全日制本科&nbsp;地址：长沙市开福区洪山街道98号"
               >
-                <p slot="reference">长沙大学&nbsp;&nbsp;&nbsp;电子信息工程</p>
+                <span slot="reference">长沙大学&nbsp;&nbsp;&nbsp;电子信息工程</span>
               </el-popover>
             </div>
 
@@ -72,10 +72,10 @@
             <div>
               <el-tag type="success">所获荣誉</el-tag>
               <div style="display:inline">
-                <p>
+                <span>
                   实用新型专利-人体静电收集装置&nbsp;专利号-CN201820991559.9
                   <br />省级实践创新项目-MFC污水处理系统
-                </p>
+                </span>
               </div>
             </div>
           </el-main>
@@ -112,9 +112,12 @@
             </div>
 
             <div>
+              <figure class="introduce-img">
+                <img src="../assets/touxian.jpg" />
+              </figure>
               <p>海口云医社综合门诊部的微信服务平台，实现线上挂号、问诊、支付等一系列医疗服务，紧随时代发展，开启网上医疗平台，已上线运行1年多，</p>
               <p>主要负责前端界面的设计与开发，使用Vue全家桶搭配Vux开发微信服务号界面，搭配Element-ui开发后台管理界面,同时联合后端人员，参与需求分析、SQL设计，实现前后端的联合开发</p>
-              <img />
+              <p>备注：公司上线项目，属公司无形资产，暂未开源。已退出项目开发，所以无医生端截图信息</p>
             </div>
           </el-main>
           <el-footer class="footer">
@@ -140,13 +143,13 @@
 
             <div>
               <el-tag>GitHub地址</el-tag>
-              <a href>Vuejs前端</a>
-              <a href>nodejs后端</a>
+              <a href="https://github.com/shinwoow/app-shin-music">Vuejs前端</a>
+              <a href="https://github.com/shinwoow/shin-music-nodejs">nodejs后端</a>
             </div>
 
             <div>
               <el-tag>预览</el-tag>
-              <a href>shin-music</a>
+              <a href="http://www.music.i07.xyz">music.i07.xyz</a>
             </div>
 
             <div>
@@ -154,8 +157,16 @@
             </div>
 
             <div>
-              <p>个人音乐APP，使用腾讯云服务器，实现音乐的上传、播放等功能</p>
-              <p>使用Vue技术栈，搭配vant组件库开发前端界面，koa2开发后台api，MySQL数据持久化，nginx域名代理，pm2运行代码</p>
+              <p>个人音乐APP，实现文件分类上传，音乐播放等主要功能</p>
+              <p>
+                使用Vue技术栈，搭配vant组件库开发前端界面，将audio对象保存在vuex中实现全局调用。
+                koa2开发后台api，使用stream实现音乐的上传，对于音乐文件上传到music目录（文件大小限制了超时时间12s，由于服务器空间较小、服务器2M网，故暂不修复），
+                其他文件上传到后缀名文件夹中，并映射到MySQL。
+                koa-static共享静态文件实现音乐播放，使用腾讯云服务器部署项目，nginx反向代理跨域访问，
+                监听7777端口并映射到二级域名music.i07.xyz上，pm2持久运行代码
+              </p>
+
+              <p>短期目标：使用Hbuilder打包成手机app，实现更多的动效设计</p>
               <img />
             </div>
           </el-main>
@@ -182,7 +193,12 @@
 
             <div>
               <el-tag>GitHub地址</el-tag>
-              <a href>Vuejs前端</a>
+              <a href="https://github.com/shinwoow/i07">https://github.com/shinwoow/i07</a>
+            </div>
+
+            <div>
+              <el-tag>预览地址</el-tag>
+              <a href="https://i07.xyz">href = "#"</a>
             </div>
 
             <div>
@@ -190,8 +206,9 @@
             </div>
 
             <div>
-              <p>在线个人简历，展示个人的一些作品</p>
-              <p>使用Vue全家桶，element-ui实现对页面的开发</p>
+              <p>在线个人简历，展示个人作品，记录自我发展</p>
+              <p>使用Vue全家桶，element-ui组件库对页面进行开发，单页面应用，未使用后台api，数据量过大，加载时间较长，故使用loading页面过渡（未找到合适的骨架屏方案）</p>
+              <p>短期目标：使用音乐app的静态资源替换固定图片，实现懒加载</p>
             </div>
           </el-main>
           <el-footer class="footer">
@@ -217,7 +234,7 @@
 
             <div>
               <el-tag>GitHub地址</el-tag>
-              <a href>Vuejs前端</a>
+              <a href>暂未上传</a>
             </div>
 
             <div>
@@ -225,6 +242,9 @@
             </div>
 
             <div>
+              <figure class="introduce-img">
+                <img src="../assets/touxian.jpg" />
+              </figure>
               <p>使用python实现对试卷的遍历阅卷，将照片命名为学生姓名，并放在固定文件夹下，运行主程序可自动遍历试卷文件夹并生成Excel保存学生成绩</p>
             </div>
           </el-main>
@@ -251,7 +271,7 @@
 
             <div>
               <el-tag>GitHub地址</el-tag>
-              <a href>Vuejs前端</a>
+              <a href="https://github.com/shinwoow/douyu-python">douyu-python</a>
             </div>
 
             <div>
@@ -259,6 +279,9 @@
             </div>
 
             <div>
+              <figure class="introduce-img">
+                <img src="../assets/touxian.jpg" />
+              </figure>
               <p>使用python爬取整个页面，搭配beautiful soup格式化页面代码，获取所需标签、类名等，提取所需数据，生成Excel文件</p>
             </div>
           </el-main>
@@ -531,6 +554,23 @@ export default {
   // background-image: linear-gradient(#fff, #9198e5);
 }
 
+/**
+ * 介绍模块图片样式
+ */
+.introduce-img {
+  height: 300px;
+  width: 170px;
+  float: right;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.introduce-img img {
+  height: inherit;
+  width: inherit;
+  overflow: inherit;
+}
+
 .next-icon-tint {
   height: 0px;
   width: auto;
@@ -603,6 +643,10 @@ export default {
 
 .main div p {
   padding: 8px 10px;
+}
+
+.personal div span {
+  display: inline-block;
 }
 
 .personal div p {

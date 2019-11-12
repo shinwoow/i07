@@ -38,4 +38,10 @@ a {
 a:hover {
   color: #F2107D;
 }
+
+p {
+  font-family: sans-serif;
+  text-indent: 37px;
+  letter-spacing: 2px;
+}
 </style>
